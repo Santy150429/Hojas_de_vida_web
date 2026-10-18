@@ -1,0 +1,301 @@
+
+/* =========================================================
+   R2: Estrategia Mobile First (CSS Base para celulares)
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* R6: Ancho máximo (max-width) centrado y unidades relativas (rem, %) */
+.header, .grid-container, .grid-container-proyectos, .grid-container-contacto, .footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header & Menú de navegación (R8, R9) */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Ajuste para el H1 del logo para no romper la estética */
+.logo h1 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0;
+}
+
+/* R7: Las imágenes no se desbordan en el celular */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    width: 40px;
+}
+
+.nav-menu a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: bold;
+}
+
+/* LÍNEA DE NAVEGACIÓN EN NEGRO AL PASAR EL CURSOR O ESTAR ACTIVO */
+.nav-menu a.active, .nav-menu a:hover {
+    color: #fff;
+    border-bottom: 2px solid #000;
+}
+
+/* R4: Estructura Hoja de Vida Mobile (1 sola columna por defecto) */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "main"
+        "cards";
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.main-content {
+    grid-area: main;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.cards-section {
+    grid-area: cards;
+    display: grid;
+    /* R5: Tarjetas adaptables con repeat(auto-fit, minmax(...)) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: #fff;
+    padding: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* =========================================================
+   Estilos específicos para proyectos.html
+   ========================================================= */
+
+.page-title {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* R5: Tarjetas de proyectos en cuadrícula adaptable */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* R7: Imágenes de proyectos responsive con altura uniforme */
+.project-img {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.btn-github {
+    display: inline-block;
+    background-color: #24292e;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-github:hover {
+    background-color: #007bff;
+}
+
+/* =========================================================
+   Estilos específicos para contacto.html
+   ========================================================= */
+
+.grid-container-contacto {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.contact-form-section, .contact-info-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.form-group input, .form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    background-color: #24292e;
+    color: #fff;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #007bff;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.social-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.privacy-note {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* =========================================================
+   Footer estilo mockup (R8)
+   ========================================================= */
+
+.footer {
+    background-color: #222;
+    color: #ccc;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.footer h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* ENLACES EN EL PIE DE PÁGINA EN BLANCO */
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+/* =========================================================
+   R3: Media Queries al final (Breakpoints)
+   ========================================================= */
+
+/* Breakpoint 1: Tablet (desde 768px) */
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Breakpoint 2: Desktop / Computador (desde 1024px) */
+@media (min-width: 1024px) {
+    /* R4: Cambio visible en la hoja de vida usando grid-template-areas */
+    .grid-container {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "main cards";
+    }
+
+    .grid-container-contacto {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
